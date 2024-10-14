@@ -1,0 +1,2 @@
+FLASK_APP=learningms.py
+FLASK_ENV=development
