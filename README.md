@@ -5,3 +5,11 @@
 
 ## Instal flask migrate, a tool for data migration process 
 ` pip install flask-migrate`
+
+
+requirement
+miigration
+
+
+
+pip install -r requirements.txt
