@@ -7,6 +7,8 @@
 ` pip install flask-migrate`
 
 
+ pip install flask-wtf
+
 requirement
 miigration
 
