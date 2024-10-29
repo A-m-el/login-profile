@@ -15,4 +15,4 @@ basedir = os.path.abspath(os.path.dirname(__file__))
 class Config:
     SQLALCHEMY_DATABASE_URI = 'sqlite:///' + os.path.join(basedir, 'app.db')
     SQLALCHEMY_TRACK_MODIFICATIONS = False
-    # SECRET_KEY = 'a_secret_key_for_sessions_and_security'
+    SECRET_KEY = 'amelSecrectKey'
