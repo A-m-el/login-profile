@@ -9,7 +9,7 @@
     <h1>Register</h1>
 
     <!-- This form will POST the data to the server when submitted -->
-    <form method="post">
+    <form method="post" >
 
         <!-- Name Field -->
         <label for="name">{{ form.name.label }}</label> <br>
@@ -23,11 +23,10 @@
         <label for="password">{{ form.password.label }}</label> <br>
         {{ form.password(size=32) }} <br>
 
+        <!-- <label for="email">{{ form.email.label}}</label> -->
+
         <!-- Submit Button -->
         {{ form.register() }} <!-- This is the submit button from forms.py -->
     </form>
-
-    <!-- Optional: Link for forgot password -->
-    <p><a href="/forgot-password">Forgot password?</a></p>
 </body>
 </html>
