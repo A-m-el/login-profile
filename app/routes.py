@@ -35,7 +35,7 @@ from app import app, db
 from app.forms import RegisterForm
 from app.models import User
 
-@app.route('/')
+@app.route('/' , methods=['GET', 'POST'])
 @app.route('/register', methods=['GET','POST'])
 def register():
     print("Route accessed!")
