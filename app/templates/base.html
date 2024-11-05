@@ -1,6 +1,11 @@
 <html>
     <head>
-    
+        {% if title %}
+        <title>{{ title }} - AmalLearning</title>
+        {% else %}
+        <title>Welcome to AmalLearning</title>
+        {% endif %}
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
     </head>
     <body>
         <div class="topnav">
