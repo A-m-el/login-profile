@@ -10,7 +10,7 @@ def register():
 
     # This checks if the form submission is valid and method is POST
     if form.validate_on_submit(): # i need to know what is this
-        user = User(name=form.name.data, email=form.email.data)
+        user = User(name=form.name.data, email=form.email.data, username=form.username.data)
         user.set_password(form.password.data)  
         db.session.add(user)
         db.session.commit()
