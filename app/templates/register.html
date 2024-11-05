@@ -1,77 +1,38 @@
+{% extends "base.html" %}
+
 
 {% block content %}
 <h1>Register</h1>
 <form action="{{ url_for('register') }}" method="post">
-{{ form.csrf_token }}
-<!-- {{ form.hidden_tag() }} -->
-<p>
-    {{ form.name.label }}<br>
-    {{ form.name(size=32) }}<br>
-    {% for error in form.name.errors %}
-        <span style="color: red;">[{{ error }}]</span>
-        {% endfor %}
-</p>
+    {{ form.csrf_token }}
     <p>
-    {{ form.email.label }}<br>
-    {{ form.email(size=64) }}<br>
-    {% for error in form.email.errors %}
-        <span style="color: red;">[{{ error }}]</span>
+        {{ form.name.label }}<br>
+        {{ form.name(size=32) }}<br>
+        {% for error in form.name.errors %}
+            <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
-</p>
-<p>
-    {{ form.password.label }}<br>
-    {{ form.password(size=32) }}<br>
-    {% for error in form.password.errors %}
-        <span style="color: red;">[{{ error }}]</span>
+    </p>
+    <p>
+        {{ form.email.label }}<br>
+        {{ form.email(size=64) }}<br>
+        {% for error in form.email.errors %}
+            <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
-</p>
-<p>
-    {{ form.password2.label }}<br>
-    {{ form.password2(size=32) }}<br>
-    {% for error in form.password2.errors %}
-        <span style="color: red;">[{{ error }}]</span>
+    </p>
+    <p>
+        {{ form.password.label }}<br>
+        {{ form.password(size=32) }}<br>
+        {% for error in form.password.errors %}
+            <span style="color: red;">[{{ error }}]</span>
         {% endfor %}
-</p>
-<p>{{ form.register() }}</p>
+    </p>
+    <p>
+        {{ form.password2.label }}<br>
+        {{ form.password2(size=32) }}<br>
+        {% for error in form.password2.errors %}
+            <span style="color: red;">[{{ error }}]</span>
+        {% endfor %}
+    </p>
+    <p>{{ form.register() }}</p>
 </form>
 {% endblock %}
-
-
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-</head>
-<body>
-
-  
-
-
-    <!-- <h1>Register</h1>
-
-    <!-- This form will POST the data to the server when submitted -->
-    <!-- <form method="post" >
-
-        <!-- Name Field -->
-        <!-- <label for="name">{{ form.name.label }}</label> <br>
-        {{ form.name(size=32) }} <br> --> 
-
-        <!-- Email Field -->
-        <!-- <label for="email">{{ form.email.label }}</label> <br>
-        {{ form.email(size=32) }} <br> -->
-
-        <!-- Password Field -->
-        <!-- <label for="password">{{ form.password.label }}</label> <br>
-        {{ form.password(size=32) }} <br> -->
-
-        <!-- <label for="email">{{ form.email.label}}</label> -->
-        <!-- <label for="password">{{ form.password.label }}</label> <br>
-        {{ form.password(size=32) }} <br> -->
-        <!-- Submit Button -->
-        <!-- {{ form.register() }} <!-- This is the submit button from forms.py 
-    </form   
-</body> 
-</html> -->
