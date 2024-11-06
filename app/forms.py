@@ -10,19 +10,29 @@ from app.models import User
 
 
 class RegisterForm(FlaskForm):
-    name = StringField('Name', validators=[DataRequired()])        
-    username = StringField('Username', validators=[DataRequired() ])
+    name = StringField('Name', [
+                validators.DataRequired(),
+                validators.Length(max=64)
+                ])      
+    username = StringField('Username', [
+                validators.DataRequired(),
+                validators.Length(max=64)
+                ])
     def validate_username(self, username):
         user = User.query.filter_by(username=username.data).first()
         if user is not None:
-            raise ValidationError('Please use a different username.')
-    email = EmailField('Email Address', validators=[DataRequired(), Email()])
+            raise ValidationError('Please use a different username')
+    email = EmailField('Email Address', [
+                validators.DataRequired(),
+                validators.Length(max=120),
+                Email()
+                ])
     def validate_email(self, email):
         user = User.query.filter_by(email=email.data).first()
         if user is not None:
-            raise ValidationError('Please use a different email address.')
+            raise ValidationError('Please use a different email address')
     password = PasswordField('Password', [
-                validators.data_required(message='password is required'),
+                validators.DataRequired(message='password is required'),
                 validators.Length(message='password should be at least 8 char', min=8)
                 ])
     password2 = PasswordField( 'Repeat Password', [
