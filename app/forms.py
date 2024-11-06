@@ -2,16 +2,25 @@ from dataclasses import field
 from wsgiref.validate import validator
 from flask_wtf import FlaskForm
 from wtforms import EmailField, PasswordField, StringField, SubmitField, ValidationError
-from wtforms.validators import  EqualTo, DataRequired, EqualTo, Email
+from wtforms.validators import  DataRequired, Email
 from wtforms import validators
+
+from app.models import User
 
 
 
 class RegisterForm(FlaskForm):
-    name = StringField('Name', validators=[DataRequired()])
+    name = StringField('Name', validators=[DataRequired()])        
     username = StringField('Username', validators=[DataRequired() ])
-    
+    def validate_username(self, username):
+        user = User.query.filter_by(username=username.data).first()
+        if user is not None:
+            raise ValidationError('Please use a different username.')
     email = EmailField('Email Address', validators=[DataRequired(), Email()])
+    def validate_email(self, email):
+        user = User.query.filter_by(email=email.data).first()
+        if user is not None:
+            raise ValidationError('Please use a different email address.')
     password = PasswordField('Password', [
                 validators.data_required(message='password is required'),
                 validators.Length(message='password should be at least 8 char', min=8)
