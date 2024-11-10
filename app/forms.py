@@ -2,7 +2,7 @@ from dataclasses import field
 from wsgiref.validate import validator
 from flask_wtf import FlaskForm
 from wtforms import EmailField, PasswordField, StringField, SubmitField, ValidationError
-from wtforms.validators import  DataRequired, Email
+from wtforms.validators import  Email
 from wtforms import validators
 
 from app.models import User
