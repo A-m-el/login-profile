@@ -43,3 +43,12 @@ class RegisterForm(FlaskForm):
     register = SubmitField('Register')    
      
     
+    
+class LoginForm(FlaskForm):
+    email = EmailField('Email Address', [
+                validators.DataRequired(),
+                Email()
+                ])
+    password = PasswordField('Password', [
+                validators.DataRequired(message='password is required'),
+                ])
