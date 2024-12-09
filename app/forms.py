@@ -44,11 +44,11 @@ class RegisterForm(FlaskForm):
      
     
     
-class LoginForm(FlaskForm):
-    email = EmailField('Email Address', [
-                validators.DataRequired(),
-                Email()
-                ])
-    password = PasswordField('Password', [
-                validators.DataRequired(message='password is required'),
-                ])
+# class LoginForm(FlaskForm):
+#     email = EmailField('Email Address', [
+#                 validators.DataRequired(),
+#                 Email()
+#                 ])
+#     password = PasswordField('Password', [
+#                 validators.DataRequired(message='password is required'),
+#                 ])

@@ -1,6 +1,6 @@
 from flask import flash, redirect, render_template, url_for
 from app import app, db
-from app.forms import LoginForm, RegisterForm
+from app.forms import  RegisterForm
 from app.models import User
 
 @app.route('/' )#, methods=['GET', 'POST']
@@ -20,9 +20,4 @@ def register():
     return render_template('register.html', title='Register', form=form)
 
 
-@app.route('/login', methods=['GET','POST'])
-def login():
-    form = LoginForm()
-    
-    
     
