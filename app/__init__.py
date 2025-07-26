@@ -13,7 +13,6 @@ def create_app():
     db.init_app(app)
     migrate.init_app(app, db)
 
-    # Register Blueprints
     from app.auth import auth_bp
     app.register_blueprint(auth_bp)
 
