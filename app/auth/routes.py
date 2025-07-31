@@ -2,7 +2,7 @@ from flask import flash, redirect, render_template, url_for
 from app import db
 from app.auth.forms import  RegisterForm
 from app.models import User
-from app.auth import auth_bp, main_bp
+from app.auth import auth_bp
 
 @auth_bp.route('/')
 @auth_bp.route('/register', methods=['GET','POST'])
